@@ -38,10 +38,15 @@ function searchMax(table){
             maxPosition = i;
         } 
     }
-    table[maxPosition].style.color = "#66ff00";
+    table[maxPosition].style.color = "green";
     for(let i = 0; i < table.length; i++){
         if(i !== maxPosition && table[i].style.color !== "red"){
             table[i].style.color = "black";
+        }
+    }
+    for(let i = 0; i < table.length; i++){
+        if(parseFloat(table[maxPosition].innerHTML) === parseFloat(table[i].innerHTML)){
+            table[i].style.color = "green";
         }
     }
 }
@@ -61,9 +66,14 @@ function searchMin(table){
             table[i].style.color = "black";
         }
     }
+    for(let i = 0; i < table.length; i++){
+        if(parseFloat(table[minPosition].innerHTML) === parseFloat(table[i].innerHTML)){
+            table[i].style.color = "red";
+        }
+    }
 }
 
-function getTableClassess(from, to, tableItems, item){
+function getTableClasses(from, to, tableItems, item){
     for(let i = from; i < to; i++){
         let td = document.createElement("td");
         td.className += `table_value${item}`;
@@ -75,11 +85,10 @@ const getTableValues = (minDate, maxDate) => {
     let currentDate = new Date();
 
     let tableItems = document.querySelectorAll(".table_item");
-    tableItems[0].innerHTML = ""
-    tableItems[1].innerHTML = ""
-    tableItems[2].innerHTML = ""
-    tableItems[3].innerHTML = ""
-
+    for(let i = 0; i <= codes.length; i++){
+        tableItems[i].innerHTML = "";
+    }
+    
     for(let i = 0; i < tableItems.length; i++){
         let tdName = document.createElement("td");
         tdName.className += "name";
@@ -121,7 +130,7 @@ const getTableValues = (minDate, maxDate) => {
         }
     }
 
-    getTableClassess(0, datesCounter, tableItems, 0);    
+    getTableClasses(0, datesCounter, tableItems, 0);    
 
     let tableValues = document.querySelectorAll(".table_value0");
 
@@ -136,7 +145,7 @@ const getTableValues = (minDate, maxDate) => {
     }
 
     for(let i = 1; i < codes.length + 1; i++){
-        getTableClassess(datesCounter * i + 1, datesCounter * (i + 1) + 1, tableItems, i);
+        getTableClasses(datesCounter * i + 1, datesCounter * (i + 1) + 1, tableItems, i);
         let tableValue = document.querySelectorAll(`.table_value${i}`);
         getTableValue(datesCounter, codes[i - 1], tableValue, currentDate);
     }
@@ -153,7 +162,9 @@ function tableSearch() {
         flag = false;
         for (let j = table.rows[i].cells.length - 1; j >= 0; j--) {
             flag = regExpCode.test(table.rows[i].cells[j].innerHTML);
-            if (flag) break;
+            if (flag) {
+                break;
+            } 
         }
         if (flag) {
             table.rows[i].style.display = "";
@@ -162,10 +173,6 @@ function tableSearch() {
         }
 
     }
-}
-
-function tableSearch1(table) {
-    console.log(table[2].innerHTML);
 }
 
 document.querySelector(".get_date_button").addEventListener("click", function(){
