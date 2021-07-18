@@ -2,22 +2,29 @@
     width: 700px;
     height: 400px;
     margin: 40px auto;
-    padding-top: 170px;
+    padding-top: 120px;
 }
 
 .text{
-    width: 670px;
+    width: 700px;
     text-align: center;
 }
 
 .search_input{
     width: 200px;
     height: 30px;
-    margin-left: 230px;
+    margin-left: 250px;
 }
 
 .table{
     margin: 30px 0;
+    border: 1px solid black;
+
+}
+
+.table td{
+    padding: 5px;
+    border: 1px solid black;
 }
 
 .table_item{
@@ -27,14 +34,15 @@
 
 .max_date_input,
 .min_date_input{
-    width: 205px;
+    width: 200px;
     height: 35px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 18px;
+    margin-right: 12px;
 }
 
 .get_date_button{
     width: 205px;
     height: 39px;
+    margin-left: 12px;
     cursor: pointer;
 }
