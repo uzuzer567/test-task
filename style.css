@@ -2,7 +2,12 @@
     width: 700px;
     height: 400px;
     margin: 40px auto;
-    padding-top: 200px;
+    padding-top: 170px;
+}
+
+.text{
+    width: 670px;
+    text-align: center;
 }
 
 .search_input{
