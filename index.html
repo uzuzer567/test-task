@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курс белорусского рубля</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="content">
+  <input name="code" class="search_input" type="text" placeholder="Код валюты" onkeyup="tableSearch()">
+  <table class="table"> 
+    <tbody class="table_body">
+      <tr class="table_item"></tr>
+      <tr class="table_item"></tr>
+      <tr class="table_item"></tr>
+      <tr class="table_item"></tr>
+    </tbody>
+  </table>   
+  <input type="date" class="min_date_input">
+  <input type="date" class="max_date_input">
+  <button class="get_date_button">Выбрать</button>
+</div>
+</body>
+<script src="script.js"></script>
+</html>
