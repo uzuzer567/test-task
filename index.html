@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="content">
+  <div class="text" for="date">Введите код валюты для поиска:<br><br></div>
   <input name="code" class="search_input" type="text" placeholder="Код валюты" onkeyup="tableSearch()">
   <table class="table"> 
     <tbody class="table_body">
@@ -18,9 +19,10 @@
       <tr class="table_item"></tr>
     </tbody>
   </table>   
+  <div class="text" for="date">Выберите диапазон дат для поиска:<br><br></div>
   <input type="date" class="min_date_input">
   <input type="date" class="max_date_input">
-  <button class="get_date_button">Выбрать</button>
+  <button class="get_date_button">Найти</button>
 </div>
 </body>
 <script src="script.js"></script>
